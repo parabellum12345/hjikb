@@ -1,0 +1,42 @@
+/*fix safari overflow-x*/
+.trf-page-wrapper {
+    overflow: hidden visible !important;
+    position: relative;
+}
+
+.formitnospam>*:first-child{
+    height: 0px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.trf-padding-remove {
+    padding: 0 !important;
+}
+.trf-padding-remove-bottom {
+    padding-bottom: 0 !important;
+}
+.trf-padding-remove-vertical {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.trf-padding-remove-horizontal {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+.trf-padding-vertical-full {
+    padding: 0 var(--grid-gap);
+}
+/* .trf-padding-vertical-half {
+    padding: 0 calc(var(--grid-gap) / 2);
+} */
+.trf-padding-vertical-half {
+    padding-top: calc(var(--grid-gap) / 2);
+    padding-bottom: calc(var(--grid-gap) / 2);
+}

@@ -1,0 +1,17 @@
+.trf-pageblock {
+    padding: var(--grid-gap) 0;
+    width: 100%;
+}
+.trf-pageblock > h1,
+.trf-pageblock > h2,
+.trf-pageblock > h3,
+.trf-container > h1,
+.trf-container > h2,
+.trf-container > h3 {
+    margin-top: 0;
+    margin-bottom: calc(var(--grid-gap) / 2);
+}
+.trf-container {	
+	margin: auto;
+    width: min(calc(100vw - calc(var(--grid-gap)* 2)), 1540px);
+}

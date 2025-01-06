@@ -1,0 +1,30 @@
+:root {
+    --color-primary--rgb: 255,2,240;
+    --color-primary-reverse--rgb: 0,230,168;
+    --color-secondary--rgb: 137,48,253;
+	
+    --color-text: #000;
+    --color-paragraph: #666666;
+    --color-text--muted: #989898;
+    --color-contrast: #fff;
+	
+    --border-radius--default: 0;
+    --border-radius--half: 0;
+	
+    --font-family-default: Helvetica Neue, Arial, sans-serif;
+    --font-size-default: 16px;
+	
+    /*--font-family-headings: 'Montserrat', sans-serif;*/
+    --font-family-headings: 'Motel King';
+
+    --transition--static: all .6s ease-out;
+    --transition--hover: all .2s ease-in;
+
+    --transition--static-fast: all .4s ease-out;
+    --transition--hover-fast: all .2s ease-in;
+
+    --transition--static-slow: all 1.2s ease-out;
+    --transition--hover-slow: all .6s ease-in;
+
+    --grid-gap: 64px;
+}

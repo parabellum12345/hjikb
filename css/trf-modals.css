@@ -1,0 +1,173 @@
+/*modals*/
+body.modal-active {
+    overflow: hidden;
+}
+.trf-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+    z-index: 999;
+}
+.trf-modal:not(.active) * {
+	pointer-events: none;
+}
+.trf-dropdown::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(51,97,124,.5);
+    top: 50%;
+    left: 50%;
+    height: 200vh;
+    width: 200vw;
+    transform: translateX(-50vw) translateY(-50vh);
+    z-index: -1;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.trf-modal::after {
+    content: "";
+    display: block;
+    /* background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 30%, rgba(255, 255, 255, 0.1) 100%); */
+	/*background: radial-gradient(50% 50% at 50% 50%, rgb(0 102 0) 30%, rgba(0, 102, 0, 0.8) 100%);*/
+	background: rgba(0,0,0,.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100vh;
+    width: 100vw;
+    transform: translateX(-50vw) translateY(-50vh);
+    z-index: -1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.trf-modal-content {
+    background-color: #fff;
+    box-shadow: var(--drop-shadow--static);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease-in;
+    transform: translateY(50px);
+
+    /* border-radius: 8px; */
+    border-radius: var(--border-radius--default);
+}
+.trf-modal-body {
+    max-height: 70vh;
+    overflow: hidden auto;
+    padding: calc(var(--grid-gap) / 2);
+}
+.trf-modal-close {
+    cursor: pointer;
+    position: absolute;
+    /* top: var(--grid-gap);
+    right: var(--grid-gap); */
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+	right: calc(var(--grid-gap) / 2);
+	top: calc(var(--grid-gap) / 2);
+    /* background-color: var(--color-contrast);
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2),
+                0px 15px 35px 0px rgba(0, 0, 0, 0.25);
+
+    bottom: 0;
+    left: 50%; */
+    /* transform: translateX(-50%) translateY(50%); */
+	transform: rotate(-45deg);
+	display: block;
+}
+.trf-modal-close::before,
+.trf-modal-close::after {
+    background: var(--color-primary);
+    content: '';
+    display: block;
+    height: 1px;
+    width: 20px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: var(--transition--hover);
+	transform-origin: center center;
+}
+.trf-modal-close::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.trf-modal-close::after {
+    transform: translate(-50%, -50%);
+}
+.trf-modal-close:hover {
+	transform: rotate(-45deg) scale(1.2);
+}
+.trf-modal-close:hover::before,
+.trf-modal-close:hover::after {
+    background: var(--color-primary--hover);
+}
+.trf-modal-border {
+    /* background-image: url(../images/bg-gold.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: linear-gradient(90.72deg, #C8AD60 0%, #866C2F 33%, #866C2F 66%, #A77F28 100%);
+    /* padding: calc(var(--grid-gap) / 8); */
+    padding: calc(var(--grid-gap) / 12);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.trf-modal-inner {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: calc(var(--grid-gap) / 2);
+    overflow: hidden auto;    
+    max-height: 70vh;
+}
+.trf-modal.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+}
+.trf-modal.active > .trf-modal-content {
+    transition: transform 0.2s ease-out;
+    transform: translateY(0);
+}
+.trf-modal-small {
+    /* max-width: 30vw; */
+	width: min(calc(100vw - var(--grid-gap)), 30vw);
+}
+
+
+/*dropdowns*/
+.trf-dropdown-wrapper {
+    position: relative;
+}
+.trf-dropdown-switcher {
+    position: relative;
+}
+.trf-dropdown-switcher.active {
+    background: var(--color-additional);
+    color: var(--color-light);
+    z-index: 2;
+}
+.trf-dropdown-switcher.active:hover {
+    background: var(--color-secondary--hover);
+}
+.trf-dropdown {
+    background: var(--color-light);
+    box-shadow: 0px 5px 15px 0px rgba(51, 97, 124, 0.2),
+                0px 15px 35px 0px rgba(51, 97, 124, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: var(--transition--static);
+}
+.trf-dropdown.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: var(--transition--hover);
+}
